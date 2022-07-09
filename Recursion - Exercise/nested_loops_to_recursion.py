@@ -1,20 +1,11 @@
-def get_nested_loops(idx, loop_idx, max_n, loops):
-    print(loops)
-
-    if loop_idx == n * n:
+def get_nested_loops(idx, array):
+    if idx >= len(array):
+        print(*array, sep=' ')
         return
-
-    if loops[-idx] == max_n:
-        if idx == n:
-            loop_idx += 1
-            idx = 0
-        loops[-idx] = 1
-        idx += 1
-
-    loops[-idx] += 1
-
-    get_nested_loops(idx, loop_idx + 1, max_n, loops)
+    for num in range(1, len(array) + 1):
+        array[idx] = num
+        get_nested_loops(idx + 1, array)
 
 
-n = 3
-get_nested_loops(1, 0, n, [1] * n)
+n = int(int(input()))
+get_nested_loops(0, [None] * n)
