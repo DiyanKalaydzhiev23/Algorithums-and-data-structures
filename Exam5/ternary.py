@@ -35,5 +35,7 @@ line = list(filter(lambda x:  x not in ['?', ':'], re.split(r' ? | : ', input())
 print(resolver(line, 0, [], False)[0])
 
 # t ? f ? 0 : t ? 2 : 3
-# t ? f ? 0 : f ? 1 : 2
+# f ? t ? 0 : 3 : f ? 4 : 2
+# t ? f ? 0 : t ? -1000 : 2 : 4
 # f ? t ? 0 : 1 : t ? f ? 2 : f ? 5 : 10
+# t ? f ? 13 : f ? 1 : f ? 2 : 120 : 10
